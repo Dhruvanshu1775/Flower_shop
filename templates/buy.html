@@ -1,0 +1,198 @@
+{% extends 'index.html' %}{% block content %}
+<!--Main layout-->
+
+<div class="container wow fadeIn">
+
+    <!-- Heading -->
+    <h2 class="my-5 h2 text-center">Checkout form</h2>
+
+    <!--Grid row-->
+    <div class="row">
+
+        <!--Grid column-->
+        <div class="col-md-8 mb-4">
+
+            <!--Card-->
+            <div class="card">
+
+                <!--Card content-->
+                <form class="card-body">
+
+                    <!--Grid row-->
+                    <div class="row">
+
+                        <!--Grid column-->
+                        <div class="col-md-6 mb-2">
+
+                            <!--firstName-->
+                            <div class="md-form " method="POST">
+                                <input type="text" name="firstname" class="form-control">
+                                <label for="firstName" class="">First name</label>
+                            </div>
+
+                        </div>
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+                        <div class="col-md-6 mb-2">
+
+                            <!--lastName-->
+                            <div class="md-form" method="POST">
+                                <input type="text" name="lastname" class="form-control">
+                                <label for="lastName" class="">Last name</label>
+                            </div>
+
+                        </div>
+                        <!--Grid column-->
+
+                    </div>
+                    <!--Grid row-->
+
+                    <!--Username-->
+
+
+                    <!--email-->
+                    <div class="md-form mb-5" method="POST">
+                        <input type="text" name="email" class="form-control" placeholder="youremail@example.com">
+                        <label for="email" class="">Email (optional)</label>
+                    </div>
+
+                    <!--address-->
+                    <div class="md-form mb-5" method="POST">
+                        <input type="text" name="address" class="form-control" placeholder="1234 Main St">
+                        <label for="address" class="">Address</label>
+                    </div>
+
+                    <!--address-2-->
+                    <div class="md-form mb-5" method="POST">
+                        <input type="text" name="address_2" class="form-control" placeholder="Apartment or suite">
+                        <label for="address-2" class="">Address 2 (optional)</label>
+                    </div>
+
+                    <!--Grid row-->
+                    <div class="row">
+
+                        <!--Grid column-->
+                        <div class="col-lg-4 col-md-12 mb-4" method="POST">
+
+                            <label for="country">Country</label>
+                            <select class="custom-select d-block w-100" name="country" required>
+                                <option value="">Choose...</option>
+                                <option>United States</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please select a valid country.
+                            </div>
+
+                        </div>
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+                        <div class="col-lg-4 col-md-6 mb-4" method="POST">
+
+                            <label for="state">State</label>
+                            <select class="custom-select d-block w-100" name="state" required>
+                                <option value="">Choose...</option>
+                                <option>California</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please provide a valid state.
+                            </div>
+
+                        </div>
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+                        <div class="col-lg-4 col-md-6 mb-4" method="POST">
+
+                            <label for="zip">Zip</label>
+                            <input type="text" class="form-control" name="zip" placeholder="" required>
+                            <div class="invalid-feedback">
+                                Zip code required.
+                            </div>
+
+                        </div>
+                        <!--Grid column-->
+
+                    </div>
+                    <!--Grid row-->
+
+
+
+                    <div class="d-block my-3">
+
+                    </div>
+
+                    <hr class="mb-4">
+                    <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+
+                </form>
+
+            </div>
+            <!--/.Card-->
+
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-md-4 mb-4">
+
+            <!-- Heading -->
+            <h4 class="d-flex justify-content-between align-items-center mb-3">
+                <span class="text-muted">Your cart</span>
+
+            </h4>
+
+            <!-- Cart -->
+            <ul class="list-group mb-3 z-depth-1">
+                <li class="list-group-item d-flex justify-content-between lh-condensed ">
+                    <div name="image" method="POST">
+                        <h6 class="my-0">Product Image</h6>
+                        <img src="{{smg.image.url}}" width="80" height="80">
+                    </div>
+
+                </li>
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                    <div name="bouquet_type" method="POST">
+                        <h6 class="my-0">Product Type</h6>
+                        <small class="text-muted">{{smg.bouquet_type}}</small>
+                    </div>
+
+                </li>
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                    <div name="product_name" method="POST">
+                        <h6 class="my-0">Product name</h6>
+                        <small class="text-muted">{{smg.name}}</small>
+
+                    </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                    <div name="description" method="POST">
+                        <h6 class="my-0">Product description</h6>
+                        <small class="text-muted">{{smg.description}}</small>
+                    </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                    <span>Total (INR)</span>
+                    <div name="price" method="POST">
+                        <strong>{{smg.price}}</strong>
+                    </div>
+                </li>
+            </ul>
+            <!-- Cart -->
+
+
+
+        </div>
+        <!--Grid column-->
+
+    </div>
+    <!--Grid row-->
+
+</div>
+</main>
+<!--Main layout-->
+
+<!--Footer-->
+
+{% endblock %}}
